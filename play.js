@@ -1,4 +1,4 @@
-const connect = require('./client');
+const { connect } = require('./client');
 // DO NOT SHARE THIS IP.
 // const IP = '127.0.0.1';
 
