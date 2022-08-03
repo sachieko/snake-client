@@ -1,13 +1,10 @@
-const { connect } = require('./client');
-// DO NOT SHARE THIS IP.
-// const IP = '127.0.0.1';
+const { connect, setupInput } = require('./client');
 
-// const NAME = 'Sachieko';
-// const input = require('process').stdin;
 
 
 console.log("Connecting ...");
 connect();
+setupInput();
 // Snek game ^
 // client.write("Move: Up")
 // client.write("Move: Down")
