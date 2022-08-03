@@ -5,6 +5,9 @@ const connect = () => {
     host: '165.227.47.243',
     port: 50541,
   });
+  client.on("connect", () => {
+    client.write(`Name: SEK`);
+  });
 
   client.setEncoding('utf8');
   client.on("data", (data) => {
