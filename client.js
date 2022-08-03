@@ -9,11 +9,11 @@ const connect = () => {
     input
   });
   client.on("connect", () => {
-    client.write(`Name: SEK`);
+    client.write(`Name: SSS`);
   });
   return client;
 };
 
 module.exports = {
-  connect,
+  connect
 };
