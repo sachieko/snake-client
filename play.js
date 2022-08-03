@@ -1,10 +1,9 @@
 const { connect } = require('./client');
 const { setupInput } = require('./input');
 
-
 console.log("Connecting ...");
-connect();
-setupInput();
+const conn = connect();
+setupInput(conn);
 // Snek game ^
 // client.write("Move: Up")
 // client.write("Move: Down")

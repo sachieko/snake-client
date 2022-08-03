@@ -1,6 +1,5 @@
 const net = require('net');
 const { stdin: input } = require('process');
-const up = "Move: up", left = "Move: left", right = "Move: right", down = "Move: down";
 
 const connect = () => {
   const client = net.createConnection({
