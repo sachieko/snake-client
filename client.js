@@ -8,7 +8,6 @@ const connect = () => {
   client.on("connect", () => {
     client.write(`Name: SEK`);
   });
-
   client.setEncoding('utf8');
   client.on("data", (data) => {
     console.log(data);
