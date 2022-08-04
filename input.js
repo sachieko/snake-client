@@ -1,19 +1,18 @@
 let connection;
 let int;
+const { UP, LEFT, DOWN, RIGHT, GREET, MEME, MEME2, MEME3, EAT, EXITMSG, QUITKEY } = require('./constants');
 const handleUserInput = (data) => {
-  if (data === '\u0003') console.log("Exiting!...\n"), process.exit();
-  if (data === 'w') int ? clearInterval(int) : null, int = setInterval(() => connection.write(up), 110);
-  if (data === 'a') int ? clearInterval(int) : null, int = setInterval(() => connection.write(left), 110);
-  if (data === 's') int ? clearInterval(int) : null, int = setInterval(() => connection.write(down), 110);
-  if (data === 'd') int ? clearInterval(int) : null, int = setInterval(() => connection.write(right), 110);
-  if (data === '1') int ? clearInterval(int) : null, connection.write(greet), int;
-  if (data === '2') int ? clearInterval(int) : null, connection.write(meme), int;
-  if (data === '3') int ? clearInterval(int) : null, connection.write(meme2), int;
-  if (data === '4') int ? clearInterval(int) : null, connection.write(meme3), int;
-  if (data === '5') int ? clearInterval(int) : null, connection.write(eat), int;
+  if (data === QUITKEY) console.log(EXITMSG), process.exit();
+  if (data === 'w') int ? clearInterval(int) : null, int = setInterval(() => connection.write(UP), 110);
+  if (data === 'a') int ? clearInterval(int) : null, int = setInterval(() => connection.write(LEFT), 110);
+  if (data === 's') int ? clearInterval(int) : null, int = setInterval(() => connection.write(DOWN), 110);
+  if (data === 'd') int ? clearInterval(int) : null, int = setInterval(() => connection.write(RIGHT), 110);
+  if (data === '1') int ? clearInterval(int) : null, connection.write(GREET);
+  if (data === '2') int ? clearInterval(int) : null, connection.write(MEME);
+  if (data === '3') int ? clearInterval(int) : null, connection.write(MEME2);
+  if (data === '4') int ? clearInterval(int) : null, connection.write(MEME3);
+  if (data === '5') int ? clearInterval(int) : null, connection.write(EAT);
 };
-const up = "Move: up", left = "Move: left", right = "Move: right", down = "Move: down";
-const greet = "Say: Hello there", meme = "Say: General Kenobi", meme2 = "Say: You are a bold one", meme3 = "Say: AYAYA!", eat = "Say: Nom!";
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;

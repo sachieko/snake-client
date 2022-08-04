@@ -1,14 +1,14 @@
 const net = require('net');
 const { stdin: input } = require('process');
-
+const { IP, PORT, NAME } = require('./constants');
 const connect = () => {
   const client = net.createConnection({
-    host: '165.227.47.243',
-    port: 50541,
+    host: IP,
+    port: PORT,
     input
   });
   client.on("connect", () => {
-    client.write(`Name: SSS`);
+    client.write(`${NAME}`);
   });
   return client;
 };
